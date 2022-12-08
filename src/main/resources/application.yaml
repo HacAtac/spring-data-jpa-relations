@@ -1,0 +1,22 @@
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG
+server:
+  port: 5000
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: Chiefy22!
+    url: jdbc:mysql://localhost:3306/schooldb
+    username: root
+  devtools:
+    restart:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+welcome:
+  message: Welcome to HacAtac page!
