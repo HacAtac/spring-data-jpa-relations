@@ -56,4 +56,5 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     int updateStudentNameByEmailId(String firstName, String emailId);
 
 
+
 }
