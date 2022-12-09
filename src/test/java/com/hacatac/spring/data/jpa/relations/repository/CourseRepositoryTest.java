@@ -1,44 +1,25 @@
 package com.hacatac.spring.data.jpa.relations.repository;
 
 import com.hacatac.spring.data.jpa.relations.entity.Course;
-import com.hacatac.spring.data.jpa.relations.entity.CourseMaterial;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @SpringBootTest
 //@DataJpaTest
+
 class CourseRepositoryTest {
-
     @Autowired
-    private CourseMaterialRepository repository;
+    private CourseRepository courseRepository;
 
     @Test
-    public void SaveCourseMaterial(){
-        Course course =
-                Course.builder()
-                        .title("DSA")
-                        .credit(69)
-                        .build();
+    public void printCourses(){
+        List<Course> courses =
+                courseRepository.findAll();
 
-            CourseMaterial courseMaterial = CourseMaterial.builder()
-                    .url("www.test.com")
-                    .course(course)
-                    .build();
-
-            repository.save(courseMaterial);
-    }
-
-    @Test
-    public void printAllCourseMaterials(){
-        List<CourseMaterial> courseMaterialList =
-                repository.findAll();
-
-        System.out.println(courseMaterialList);
+        System.out.println("courses = " + courses);
     }
 
 }
