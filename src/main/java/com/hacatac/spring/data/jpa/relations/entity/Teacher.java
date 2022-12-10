@@ -1,12 +1,10 @@
 package com.hacatac.spring.data.jpa.relations.entity;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -26,15 +24,27 @@ public class Teacher {
     )
     private Long teacherId;
 
-    private String name;
+    private String firstName;
 
-    @ManyToOne(
-            cascade = CascadeType.ALL
-            //fetch = FetchType.LAZY
+    private String lastName;
+
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
     )
     @JoinColumn(
-            name = "student_id",
-            referencedColumnName = "studentId"
+            name = "teacher_id",
+            referencedColumnName = "teacherId"
     )
-    private Student student;
+    private List<Student> student;
+
+    @OneToMany(
+          cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
+    @JoinColumn(
+            name = "teacher_id",
+            referencedColumnName = "teacherId"
+    )
+    private List<Course> courses;
 }
