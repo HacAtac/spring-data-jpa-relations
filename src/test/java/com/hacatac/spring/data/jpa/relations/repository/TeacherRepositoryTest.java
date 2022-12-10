@@ -29,7 +29,7 @@ class TeacherRepositoryTest {
         Student studentOne = Student.builder()
                 .firstName("Jordan")
                 .lastName("Hackworth")
-                .emailId("chiefy123@chiefy.com")
+                .emailId("chiefy123123@chiefy.com")
                 .build();
 
         Course courseTwo = Course.builder()
@@ -40,13 +40,13 @@ class TeacherRepositoryTest {
         Student studentTwo = Student.builder()
                 .firstName("Jessie")
                 .lastName("Hackworth")
-                .emailId("jesss@hack.com")
+                .emailId("jesssasdsd@hack.com")
                 .build();
 
         Teacher teacher = Teacher.builder()
                         .firstName("Tiffany")
                         .lastName("Hudgens")
-                        .courses(List.of(courseOne, courseTwo))
+                        //.courses(List.of(courseOne, courseTwo))
                         .student(List.of(studentOne, studentTwo))
                                 .build();
         teacherRepository.save(teacher);

@@ -38,13 +38,13 @@ public class Teacher {
     )
     private List<Student> student;
 
-    @OneToMany(
-          cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
-    )
-    @JoinColumn(
-            name = "teacher_id",
-            referencedColumnName = "teacherId"
-    )
-    private List<Course> courses;
+//    @OneToMany(
+//          cascade = CascadeType.ALL,
+//            fetch = FetchType.LAZY
+//    )
+//    @JoinColumn(
+//            name = "teacher_id",
+//            referencedColumnName = "teacherId"
+//    )
+//    private List<Course> courses;
 }
