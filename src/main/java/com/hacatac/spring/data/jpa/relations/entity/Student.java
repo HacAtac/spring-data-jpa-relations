@@ -3,6 +3,7 @@ package com.hacatac.spring.data.jpa.relations.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -51,4 +52,6 @@ public class Student {
             referencedColumnName = "teacherId"
     )
     private Teacher teacher;
+
+
 }

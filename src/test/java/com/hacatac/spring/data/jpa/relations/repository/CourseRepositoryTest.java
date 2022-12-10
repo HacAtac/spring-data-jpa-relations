@@ -1,6 +1,7 @@
 package com.hacatac.spring.data.jpa.relations.repository;
 
 import com.hacatac.spring.data.jpa.relations.entity.Course;
+import com.hacatac.spring.data.jpa.relations.entity.Student;
 import com.hacatac.spring.data.jpa.relations.entity.Teacher;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -92,6 +93,34 @@ class CourseRepositoryTest {
                         .getContent();
 
         System.out.println("courses = " + courses);
+    }
+
+    @Test
+    public void saveCourseWithStudentAndTeacher(){
+        Teacher teacher = Teacher
+                .builder()
+                .firstName("asdfdsf")
+                .lastName("asdfsdf")
+                .build();
+
+        Student student = Student
+                .builder()
+                .firstName("He123123llo")
+                .lastName("The123123re")
+                .emailId("111restapi@cool.com")
+                .build();
+
+        Course course = Course
+                .builder()
+                .title("C123#")
+                .credit(11230)
+                .teacher(teacher)
+                .build();
+
+        course.addStudents(student);
+
+        courseRepository.save(course);
+
     }
 
 }
