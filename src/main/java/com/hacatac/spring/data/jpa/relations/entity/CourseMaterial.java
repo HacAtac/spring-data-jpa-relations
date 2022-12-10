@@ -9,6 +9,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Entity
 @Builder
+@ToString(exclude = "course")
 public class CourseMaterial {
 
     @Id

@@ -42,4 +42,13 @@ public class Student {
 
     @Embedded
     private Guardian guardian;
+
+    @ManyToOne(
+            cascade = CascadeType.ALL
+    )
+    @JoinColumn(
+            name = "teacher_id",
+            referencedColumnName = "teacherId"
+    )
+    private Teacher teacher;
 }
